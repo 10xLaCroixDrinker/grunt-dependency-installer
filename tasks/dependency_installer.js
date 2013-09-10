@@ -8,43 +8,48 @@
 
 'use strict';
 
+var fs = require('fs'),
+    childProcess = require('child_process');
+
 module.exports = function(grunt) {
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
-
-  grunt.registerMultiTask('dependency_installer', 'A Grunt plugin for installing dependancies to node modules stored in the plugins directory', function() {
+  grunt.registerTask('dependency_installer', 'A Grunt plugin for installing dependancies to node modules stored in the plugins directory', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      punctuation: '.',
-      separator: ', '
-    });
+      pluginsDir: 'plugins'
+    }),
+        done = this.async(),
+        plugins = [],
+        cmdOpts = {
+          cwd: process.cwd(),
+          env: process.env
+        };
 
-    // Iterate over all specified file groups.
-    this.files.forEach(function(f) {
-      // Concat specified files.
-      var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
-        if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
-          return false;
-        } else {
-          return true;
+    // Install dependencies
+    var npmInstall = function(thisPackage, callback) {
+      var cd = 'cd ' + process.cwd() + '/' + options.pluginsDir + '/' + thisPackage,
+          command = cd + ' && npm install';
+
+      childProcess.exec(command, cmdOpts,function(err, stdout, stderr) {
+        if (err) throw err;
+        grunt.verbose.writeln(stdout);
+        grunt.log.oklns('Installed ' + thisPackage + '\'s dependencies');
+        if (thisPackage === plugins[plugins.length - 1]) {
+          done();
         }
-      }).map(function(filepath) {
-        // Read file source.
-        return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
+      });
+    };
 
-      // Handle options.
-      src += options.punctuation;
+    // Walk through pluginsDir
+    fs.readdir(process.cwd() + '/' + options.pluginsDir, function (err, files) {
+      if (err) throw err;
 
-      // Write the destination file.
-      grunt.file.write(f.dest, src);
+      plugins = files;
 
-      // Print a success message.
-      grunt.log.writeln('File "' + f.dest + '" created.');
+      for (var i = 0; i < plugins.length; i++) {
+        grunt.log.writeln('Installing ' + plugins[i] + '\'s dependencies');
+        npmInstall(plugins[i]);
+      }
     });
   });
-
 };
