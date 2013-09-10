@@ -20,6 +20,7 @@ module.exports = function(grunt) {
     }),
         done = this.async(),
         plugins = [],
+        installed = [],
         cmdOpts = {
           cwd: process.cwd(),
           env: process.env
@@ -32,9 +33,13 @@ module.exports = function(grunt) {
 
       childProcess.exec(command, cmdOpts,function(err, stdout, stderr) {
         if (err) throw err;
+
         grunt.verbose.writeln(stdout);
         grunt.log.oklns('Installed ' + thisPackage + '\'s dependencies');
-        if (thisPackage === plugins[plugins.length - 1]) {
+
+        installed.push(thisPackage);
+
+        if (installed.length === plugins.length) {
           done();
         }
       });
