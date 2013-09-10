@@ -1,0 +1,47 @@
+{
+  "name": "grunt-dependency-installer",
+  "description": "A Grunt plugin for installing dependancies to node modules stored in the plugins directory",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jking90/grunt-dependency-installer",
+  "author": {
+    "name": "Jimmy King",
+    "email": "hello@jimmyking.me",
+    "url": "http://jimmyking.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jking90/grunt-dependency-installer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jking90/grunt-dependency-installer/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jking90/grunt-dependency-installer/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin",
+    "dependency",
+    "installer",
+    "plugins",
+    "plugin"
+  ]
+}
