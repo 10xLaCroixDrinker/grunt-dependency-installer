@@ -36,7 +36,7 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.pluginDir
 Type: `String`
 Default value: `'plugins'`
 
