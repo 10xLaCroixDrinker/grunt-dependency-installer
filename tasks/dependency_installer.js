@@ -45,6 +45,13 @@ module.exports = function(grunt) {
       });
     };
 
+    // Check if path is directory
+    var isDir = function(directory) {
+      var path = process.cwd() + '/' + options.pluginsDir + '/' + directory,
+          stats = fs.lstatSync(path);
+      return stats.isDirectory();
+    };
+
     // Walk through pluginsDir
     fs.readdir(process.cwd() + '/' + options.pluginsDir, function (err, files) {
       if (err) throw err;
@@ -52,8 +59,10 @@ module.exports = function(grunt) {
       plugins = files;
 
       for (var i = 0; i < plugins.length; i++) {
-        grunt.log.writeln('Installing ' + plugins[i] + '\'s dependencies');
-        npmInstall(plugins[i]);
+        if (isDir(plugins[i])) {
+          grunt.log.writeln('Installing ' + plugins[i] + '\'s dependencies');
+          npmInstall(plugins[i]);
+        }
       }
     });
   });
