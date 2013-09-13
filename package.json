@@ -1,7 +1,7 @@
 {
   "name": "grunt-dependency-installer",
   "description": "A Grunt plugin for installing dependancies to node modules stored in the plugins directory",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/jking90/grunt-dependency-installer",
   "author": {
     "name": "Jimmy King",

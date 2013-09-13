@@ -1,5 +1,8 @@
 ## Release History
 
+- 0.1.3 (Sept 13, 2013)
+  - Fixed bug that prevented `done()` from executing when an file was in `pluginsDir`
+
 - 0.1.2 (Sept 11, 2013)
   - Fixed bug that caused failure when an file was in `pluginsDir`
 
