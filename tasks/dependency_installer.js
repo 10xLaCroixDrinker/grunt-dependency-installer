@@ -56,12 +56,11 @@ module.exports = function(grunt) {
     fs.readdir(process.cwd() + '/' + options.pluginsDir, function (err, files) {
       if (err) throw err;
 
-      plugins = files;
-
-      for (var i = 0; i < plugins.length; i++) {
-        if (isDir(plugins[i])) {
-          grunt.log.writeln('Installing ' + plugins[i] + '\'s dependencies');
-          npmInstall(plugins[i]);
+      for (var i = 0; i < files.length; i++) {
+        if (isDir(files[i])) {
+          plugins.push(files[i]);
+          grunt.log.writeln('Installing ' + files[i] + '\'s dependencies');
+          npmInstall(files[i]);
         }
       }
     });
