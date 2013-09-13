@@ -1,5 +1,9 @@
 # grunt-dependency-installer
 
+[![NPM version](https://badge.fury.io/js/grunt-dependency-installer.png)](http://badge.fury.io/js/grunt-dependency-installer)
+[![Dependency Status](https://gemnasium.com/jking90/grunt-dependency-installer.png)](https://gemnasium.com/jking90/grunt-dependency-installer)
+[![Build Status](https://travis-ci.org/jking90/grunt-dependency-installer.png?branch=master)](https://travis-ci.org/jking90/grunt-dependency-installer)
+
 > A Grunt plugin for installing dependancies to node modules stored in the plugins directory
 
 ## Getting Started
@@ -36,7 +40,7 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.pluginDir
 Type: `String`
 Default value: `'plugins'`
 
