@@ -16,7 +16,8 @@ module.exports = function(grunt) {
   grunt.registerTask('dependency_installer', 'A Grunt plugin for installing dependancies to node modules stored in the plugins directory', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      pluginsDir: 'plugins'
+      pluginsDir: 'plugins',
+      npmArgs: ''
     }),
         done = this.async(),
         plugins = [],
@@ -29,7 +30,7 @@ module.exports = function(grunt) {
     // Install dependencies
     var npmInstall = function(thisPackage, callback) {
       var cd = 'cd ' + process.cwd() + '/' + options.pluginsDir + '/' + thisPackage,
-          command = cd + ' && npm install';
+          command = cd + ' && npm install ' + options.npmArgs;
 
       childProcess.exec(command, cmdOpts,function(err, stdout, stderr) {
         if (err) throw err;
