@@ -1,5 +1,9 @@
 ## Release History
 
+- 0.2.0 (Sept 25, 2014)
+  - Merged #3 from @amesarosh
+  - Added option to pass arguments to `npm install`
+
 - 0.1.3 (Sept 13, 2013)
   - Fixed bug that prevented `done()` from executing when an file was in `pluginsDir`
 
