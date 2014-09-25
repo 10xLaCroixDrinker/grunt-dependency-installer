@@ -32,7 +32,8 @@ In your project's Gruntfile, add a section named `dependency_installer` to the d
 grunt.initConfig({
   dependency_installer: {
     options: {
-      pluginDir: 'plugins'
+      pluginDir: 'plugins',
+      npmArgs: '--cache ./.npm-cache'
     }
   },
 })
@@ -46,6 +47,11 @@ Default value: `'plugins'`
 
 Relative path to your private plugins.
 
+#### options.npmArgs
+Type: `String`
+Default value: `''`
+
+Additional arguments to pass to `npm install`
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
