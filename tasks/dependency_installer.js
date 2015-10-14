@@ -33,7 +33,9 @@ module.exports = function(grunt) {
           command = cd + ' && npm install ' + options.npmArgs;
 
       childProcess.exec(command, cmdOpts,function(err, stdout, stderr) {
-        if (err) throw err;
+        if (err) {
+          throw err;
+        }
 
         grunt.verbose.writeln(stdout);
         grunt.log.oklns('Installed ' + thisPackage + '\'s dependencies');
@@ -55,7 +57,9 @@ module.exports = function(grunt) {
 
     // Walk through pluginsDir
     fs.readdir(process.cwd() + '/' + options.pluginsDir, function (err, files) {
-      if (err) throw err;
+      if (err) {
+        throw err;
+      }
 
       for (var i = 0; i < files.length; i++) {
         if (isDir(files[i])) {
