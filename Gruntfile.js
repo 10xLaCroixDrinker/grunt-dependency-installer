@@ -1,8 +1,8 @@
 /*
  * grunt-dependency-installer
- * https://github.com/jking90/grunt-dependency-installer
+ * https://github.com/10xLaCroixDrinker/grunt-dependency-installer
  *
- * Copyright (c) 2013 Jimmy King
+ * Copyright (c) 2013 Jamie King
  * Licensed under the MIT license.
  */
 
