@@ -4,9 +4,9 @@
 # grunt-dependency-installer
 
 [![NPM version](https://badge.fury.io/js/grunt-dependency-installer.png)](http://badge.fury.io/js/grunt-dependency-installer)
-[![Dependency Status](https://gemnasium.com/jking90/grunt-dependency-installer.png)](https://gemnasium.com/jking90/grunt-dependency-installer)
-[![Build Status](https://travis-ci.org/jking90/grunt-dependency-installer.png?branch=main)](https://travis-ci.org/jking90/grunt-dependency-installer)
-[![Gittip donate button](http://img.shields.io/gittip/jking90.png)](https://www.gittip.com/jking90/ "Donate weekly to this project using Gittip")
+[![Dependency Status](https://gemnasium.com/10xLaCroixDrinker/grunt-dependency-installer.png)](https://gemnasium.com/10xLaCroixDrinker/grunt-dependency-installer)
+[![Build Status](https://travis-ci.org/10xLaCroixDrinker/grunt-dependency-installer.png?branch=main)](https://travis-ci.org/10xLaCroixDrinker/grunt-dependency-installer)
+[![Gittip donate button](http://img.shields.io/gittip/10xLaCroixDrinker.png)](https://www.gittip.com/10xLaCroixDrinker/ "Donate weekly to this project using Gittip")
 
 > A Grunt plugin for installing dependancies to node modules stored in the plugins directory
 
