@@ -1,6 +1,3 @@
-# Seeking new maintainer!
-> Open an issue if you'd like to take this project over.
-
 # grunt-dependency-installer
 
 [![NPM version](https://badge.fury.io/js/grunt-dependency-installer.png)](http://badge.fury.io/js/grunt-dependency-installer)
